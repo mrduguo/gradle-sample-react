@@ -27,7 +27,7 @@ It will start webpack in watch mode in background then run boot app. Any change 
 ### the service
 
 
-Then you may access the app at [http://localhost:8080/](http://localhost:8881/). 
+Then you may access the app at [http://localhost:8881/](http://localhost:8881/). 
 
 You may login with:
 * username: user
