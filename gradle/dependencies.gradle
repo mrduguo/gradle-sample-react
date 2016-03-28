@@ -1,0 +1,17 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$libSpringBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-data-rest:$libSpringBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-websocket:$libSpringBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-security:$libSpringBootVersion"
+    compile "org.codehaus.groovy:groovy-all:$libGroovyVersion"
+    compile 'com.h2database:h2:1.4.191'
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$libSpringBootVersion"
+    testCompile 'org.spockframework:spock-spring:1.0-groovy-2.4'
+    testCompile 'org.gebish:geb-spock:0.13.1'
+    testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.52.0'
+    testCompile 'org.apache.ant:ant:1.9.4'
+    testCompile('com.codeborne:phantomjsdriver:1.2.1') {
+        transitive = false
+    }
+}
