@@ -1,1 +1,0 @@
-script: JOB_NAME=CI ./gradlew

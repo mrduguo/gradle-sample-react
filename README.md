@@ -1,4 +1,4 @@
-## gradle sample react  [![Build Status](https://travis-ci.org/mrduguo/gradle-sample-react.svg?branch=master)](https://travis-ci.org/mrduguo/gradle-sample-react)
+## gradle sample react
 a demo for react + spring boot based on [mrduguo/gradle-buildscript](https://github.com/mrduguo/gradle-buildscript) project. 
 
 
