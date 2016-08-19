@@ -36,7 +36,11 @@ class PhantomJSInstaller {
             archiveExtension = 'zip'
         } else if (Platform.current.is(Platform.LINUX)) {
             execFilePath = '/bin/phantomjs'
-            platform = 'linux-i686'
+            if(System.properties['sun.arch.data.model']=='32'){
+                platform = 'linux-i686'
+            }else{
+                platform = 'linux-x86_64'
+            }
             archiveExtension = 'tar.bz2'
         } else {
             throw new RuntimeException("Unsupported operating system [${Platform.current}]")
