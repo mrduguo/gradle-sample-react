@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "npm test && webpack --bail --config=config/webpack.js --optimize-minimize",
-    "run": "webpack --watch -d --config=config/webpack.js",
+    "start": "webpack --watch -d --config=config/webpack.js",
     "standard": "standard",
     "standard-format": "standard-format -w",
     "test": "jest"
