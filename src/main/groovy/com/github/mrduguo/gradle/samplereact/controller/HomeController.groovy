@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.mrduguo.gradle.samplereact.controller;
+package com.github.mrduguo.gradle.samplereact.controller
 
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-	@RequestMapping(produces = 'text/html' ,value='/')
+	@RequestMapping(method = RequestMethod.GET,produces = 'text/html' ,value='/')
 	def index() {
 		def indexHtml=getClass().getResourceAsStream('/static/index.html').text
 		if(isLiveReloadEnabled()){
