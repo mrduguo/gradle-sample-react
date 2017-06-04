@@ -13,17 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.mrduguo.gradle.samplereact.config;
+package com.github.mrduguo.gradle.samplereact.config
 
-import com.github.mrduguo.gradle.samplereact.repo.Manager;
-import com.github.mrduguo.gradle.samplereact.repo.SpringDataJpaUserDetailsService;
+import com.github.mrduguo.gradle.samplereact.repo.Manager
+import com.github.mrduguo.gradle.samplereact.repo.SpringDataJpaUserDetailsService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.autoconfigure.security.Http401AuthenticationEntryPoint;
+import org.springframework.boot.autoconfigure.security.Http401AuthenticationEntryPoint
 import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.web.util.matcher.AnyRequestMatcher
 
@@ -32,18 +32,19 @@ import org.springframework.security.web.util.matcher.AnyRequestMatcher
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private SpringDataJpaUserDetailsService userDetailsService;
+    @Autowired
+    private SpringDataJpaUserDetailsService userDetailsService;
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-			.userDetailsService(this.userDetailsService)
-				.passwordEncoder(Manager.PASSWORD_ENCODER);
-	}
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(this.userDetailsService)
+                .passwordEncoder(Manager.PASSWORD_ENCODER);
+    }
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // @formatter:off
 		http
 			.authorizeRequests()
 				.antMatchers('/','/dist/**').permitAll()
@@ -62,7 +63,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     new Http401AuthenticationEntryPoint('Login Required'),
                     AnyRequestMatcher.INSTANCE
                 )
-	}
+        // @formatter:on
+    }
 
 }
-// end::code[]
